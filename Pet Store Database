@@ -1,0 +1,19 @@
+--Create a Pet Store Database
+
+CREATE TABLE pet_store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER, aisle INTEGER);
+
+INSERT INTO pet_store VALUES (1, "Dog food", 14.99,20,5);
+INSERT INTO pet_store VALUES (2, "Cat food", 12.50,15,5);
+INSERT INTO pet_store VALUES (3, "Collars", 5.75,12,1);
+INSERT INTO pet_store VALUES (4, "Leashes", 7.99,20,1);
+INSERT INTO pet_store Values (5, "Cat litter", 11.25,10,3);
+INSERT INTO pet_store VALUES (6, "Cages", 25.00,12,3);
+
+--Display the database ordered by price.
+SELECT * FROM pet_store ORDER BY price;
+
+--How many items do I have in each aisle?
+SELECT aisle, SUM(quantity) FROM pet_store GROUP BY aisle;
+
+--Which items cost less than $10.00?
+SELECT * FROM pet_store WHERE price < 10.00;
